@@ -4,6 +4,9 @@ Date: 2026-11-07. The public package passed **38 local tests**. A separate insta
 checks import isolation and the complete toy SFT/review/RL/reload workflow. The GitHub CPU workflow
 runs these package tests and the demo on pushes and pull requests.
 
+Clean Linux installation exposed DuckDB's Python-side timezone conversion dependency: `pytz` must
+be installed for the health-case timestamp observations. It is now an explicit package dependency.
+
 | Environment | Versions |
 |---|---|
 | Local CPU tests | Python 3.10.20, Torch 2.11.0+cu128, Transformers 4.55.2, PEFT 0.18.1, Accelerate 1.10.1, DuckDB 1.5.6 |
