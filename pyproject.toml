@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "causalquest"
+version = "0.1.0a1"
+description = "Reproducible SFT and agentic RL research workflows for evidence-grounded decisions"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = ["duckdb>=1.1,<2", "PyYAML>=6,<7"]
+
+[project.optional-dependencies]
+train = ["torch>=2.8,<3", "transformers==4.55.2", "peft==0.18.1", "accelerate==1.10.1"]
+dev = ["pytest>=8,<9", "build>=1,<2"]
+
+[project.scripts]
+cq = "causalquest.framework.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"causalquest.framework" = ["rubric.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+

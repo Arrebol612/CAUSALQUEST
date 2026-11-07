@@ -1,0 +1,81 @@
+{
+  "schema": "cq-public-acceptance-v0.1",
+  "date": "2026-11-07",
+  "status": "bounded_real_4B_A40_workflow_passed",
+  "model_family": "Qwen3-4B",
+  "starting_adapter": "existing recovery-SFT R60; weights supplied separately",
+  "reference_adapter": "fixed R60",
+  "backend": "Transformers + PEFT LoRA, one device",
+  "protocol": "cq-public-history-v1",
+  "input_scope": "three authored synthetic TRAIN cases",
+  "SFT": {
+    "updates": 1,
+    "assistant_action_rows": 13,
+    "peak_allocated_vram_MiB": 16194.91015625,
+    "fresh_reload_verified": true
+  },
+  "sample": {
+    "episodes": 6,
+    "cases": 3,
+    "draws_per_case": 2,
+    "seeds": [
+      17,
+      18
+    ],
+    "sampling_temperature": 0.6,
+    "top_p": 1.0,
+    "top_k": 0,
+    "model_default_fallback": false,
+    "max_actions_per_episode": 16,
+    "max_new_tokens_per_call": 1024,
+    "generation_calls": 91,
+    "target_tokens": 16318,
+    "native_prompt_token_roundtrips_verified": 91,
+    "peak_allocated_vram_MiB": 11445.27880859375,
+    "max_observed_full_tokens": 10741
+  },
+  "pre_RL_human_review": {
+    "episodes": 6,
+    "submitted": 2,
+    "core_supported": 1,
+    "strict_complete_success": 0,
+    "pending": 0,
+    "policy_active_groups": 1,
+    "rubric": "cq-seven-dimension-v1",
+    "hidden_oracle_read": false
+  },
+  "RL": {
+    "updates": 1,
+    "episodes_in_batch": 6,
+    "target_tokens": 16318,
+    "policy_active_groups": 1,
+    "old_current_max_abs_logprob_difference": 0.0,
+    "gradient_norm_pre_clip": 0.269931435585022,
+    "parameter_changed": true,
+    "fresh_reload_verified": true,
+    "reference_remains_R60": true,
+    "original_model_files_unchanged": true,
+    "peak_allocated_vram_MiB": 24028.7744140625,
+    "job_elapsed_seconds": 753,
+    "post_update_sample_k3_to_fixed_reference": 0.00042850473140702996,
+    "post_update_clip_fraction_vs_old": 0.0037994852310332147
+  },
+  "runtime_versions": {
+    "PyYAML": "6.0.3",
+    "accelerate": "1.10.1",
+    "duckdb": "1.5.5",
+    "peft": "0.18.1",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.55.2"
+  },
+  "GPU": "NVIDIA A40",
+  "verification": {
+    "update_archive_files_checked": 223,
+    "all_sampling_receipts_checked": 91,
+    "implementation_sha256": "b4f1dd39d47c9130f77f8d3079605e44beb70bef95220f7a2f5f1caf7d68ca60",
+    "weight_files_redistributed": false,
+    "remote_saved_weight_bytes_checked_by_native_receipts_and_fresh_reload": true
+  },
+  "post_update_independent_quality_evaluation": false,
+  "scope": "Integration acceptance of the declared pipeline; no training-benefit comparison or generalization claim."
+}

@@ -1,0 +1,10 @@
+{
+  "backend": "toy",
+  "environment": "toy",
+  "scorer": "toy_rules",
+  "seed": 17,
+  "max_steps": 1,
+  "batch_rows": 6,
+  "learning_rate": 0.02,
+  "draws_per_case": 4
+}

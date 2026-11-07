@@ -1,0 +1,43 @@
+{
+  "case_id": "tutorial_design",
+  "title": "Tutorial experiment design",
+  "business_context": "Authored public tutorial, not real company data.",
+  "template_family_id": "tutorial_design_v1",
+  "source_group_id": "tutorial_source",
+  "design": {
+    "experiment_id": "design_test",
+    "scenario_family": "feed",
+    "hypothesis": "新卡片提高点击率",
+    "decision_action": "通过后灰度",
+    "randomization_unit": "user",
+    "exposure_unit": "user",
+    "analysis_unit": "user",
+    "analysis_population": "triggered_units",
+    "estimand": "triggered_population_ate",
+    "exposure_definition": "渲染前触发",
+    "design_type": "individual_ab",
+    "interference_risk": "low",
+    "cluster_adjustment": false,
+    "planned_sample_per_arm": 8000,
+    "baseline_rate": 0.12,
+    "mde_absolute": 0.015,
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "metrics": [
+      {
+        "metric_id": "click_through_rate",
+        "role": "primary",
+        "unit": "exposed_unit",
+        "attribution_window": "same_session",
+        "direction": "increase"
+      },
+      {
+        "metric_id": "crash_free_session_rate",
+        "role": "guardrail",
+        "unit": "session",
+        "attribution_window": "same_session",
+        "direction": "increase"
+      }
+    ]
+  }
+}

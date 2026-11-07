@@ -1,0 +1,53 @@
+{
+  "version": "design-review-rubric-v1",
+  "root": {
+    "id": "design_review",
+    "weight": 1.0,
+    "description": "实验设计评审总分",
+    "hard_gate": false,
+    "children": [
+      {
+        "id": "validity",
+        "weight": 0.3,
+        "description": "识别会阻断解释的设计问题",
+        "hard_gate": true,
+        "children": []
+      },
+      {
+        "id": "issue_coverage",
+        "weight": 0.2,
+        "description": "覆盖 Oracle 中的主要问题",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "power",
+        "weight": 0.15,
+        "description": "正确使用功效工具及其假设",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "evidence",
+        "weight": 0.15,
+        "description": "关键结论绑定实际工具证据",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "decision",
+        "weight": 0.15,
+        "description": "给出阶段合法且与问题一致的建议",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "human_boundary",
+        "weight": 0.05,
+        "description": "保留人工审批边界",
+        "hard_gate": true,
+        "children": []
+      }
+    ]
+  }
+}

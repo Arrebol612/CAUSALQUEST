@@ -1,0 +1,53 @@
+{
+  "version": "health-diagnosis-rubric-v1",
+  "root": {
+    "id": "health_diagnosis",
+    "weight": 1.0,
+    "description": "实验运行健康诊断总分",
+    "hard_gate": false,
+    "children": [
+      {
+        "id": "validity",
+        "weight": 0.25,
+        "description": "识别阻断因果解释的数据问题",
+        "hard_gate": true,
+        "children": []
+      },
+      {
+        "id": "localization",
+        "weight": 0.15,
+        "description": "定位故障机制与受影响切片",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "trajectory",
+        "weight": 0.15,
+        "description": "按证据更新调查状态并控制调用",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "evidence",
+        "weight": 0.2,
+        "description": "关键结论绑定诊断工具证据",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "decision",
+        "weight": 0.2,
+        "description": "给出与严重度一致的运行建议",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "human_boundary",
+        "weight": 0.05,
+        "description": "保留人工处置边界",
+        "hard_gate": true,
+        "children": []
+      }
+    ]
+  }
+}

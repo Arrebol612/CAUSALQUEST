@@ -1,0 +1,60 @@
+{
+  "source_version": "rl_v0_public_evidence_seven_dimension_v2",
+  "criteria": {
+    "validity": {
+      "question": "Are the experiment's units, population, metric/window and prerequisites interpreted within their actual scope?",
+      "2": "Correctly applies the observed design/validity facts and their limits; does not invent failed gates or treat unknown as healthy",
+      "1": "Identifies relevant design/validity facts but omits or misstates a material prerequisite",
+      "0": "Uses incompatible units/populations/windows, invents an invalidity blocker, or interprets effects despite a proven validity blocker",
+      "task_notes": "Design power/traffic feasibility belongs here; health source facts belong here, anomaly localization belongs to diagnosis. For post tasks inspect the declared source before any effect interpretation. A mislabeled source metadata field without changing actual source applicability or the validity gate is an evidence-binding defect, not a validity failure."
+    },
+    "effect": {
+      "question": "Does the interpretation bind the declared candidate/reference to the actual adjusted effect and interval?",
+      "2": "Correct object, unit, sign, interval/multiplicity and comparison; if source validity blocks effects, explicitly withholds interpretation",
+      "1": "Some correctly bound effect facts but a localized value, object or interpretation defect remains",
+      "0": "Wrong comparison object or central effect/interval interpretation, or no supported effect-related reasoning",
+      "task_notes": "Not applicable to pre-experiment design or runtime health; no bonus for calculating an effect where it should not be interpreted."
+    },
+    "diagnosis": {
+      "question": "Is the main health conclusion grounded in the actual anomaly or absence of observed anomalies?",
+      "2": "Distinguishes SRM, exposure, completeness, timeliness and slice estimability; correct normal/abnormal conclusion without invented cause",
+      "1": "Correctly identifies a real relevant signal but adds local false diagnoses or fails to close its main mechanism",
+      "0": "Central anomaly is fabricated, true decisive anomaly is missed, or a known non-estimable slice is treated as a proved failure"
+    },
+    "evidence": {
+      "question": "Were the necessary information and actual support for the report/state obtained before the action?",
+      "2": "All material claims and accepted state grounded in sufficient, applicable, correctly cited prior evidence",
+      "1": "At least one decision-relevant claim is supported, but material citation, coverage or binding defects remain",
+      "0": "No demonstrated decision-relevant support, future/unobserved sources, or central claim built from the wrong source",
+      "task_notes": "Equivalent sufficient evidence is accepted; no tool-name, citation-count, repeated-call or expert-sequence bonus."
+    },
+    "decision": {
+      "question": "Do the business decision, actual accepted state, blockers and next actions follow the same supported branch?",
+      "2": "Supported decision and mutually consistent accepted state/issues/actions, within lifecycle and authority bounds",
+      "1": "Main conclusion is supportable but a localized state, issue or next-action inconsistency needs repair",
+      "0": "Wrong central recommendation, fabricated main blocker, or a material decision/state/action contradiction",
+      "task_notes": "A correct decision enum alone is insufficient; a legitimate alternative action is allowed if the evidence supports it."
+    },
+    "uncertainty": {
+      "question": "Does the report distinguish missing inputs, estimability limits, statistical uncertainty and business thresholds?",
+      "2": "Calibrates certainty to observed evidence and uses the correct zero/MDE or design-input branch",
+      "1": "Some valid limitations but a localized unsupported certainty, omission or comparison remains",
+      "0": "Central uncertainty/threshold branch is wrong, unknown is asserted as normal, or generic caution replaces known facts",
+      "task_notes": "No bonus for caution phrases, extra blockers, blanket abstention or repeated human-approval language."
+    },
+    "format": {
+      "question": "Did the actual terminal output satisfy the public report/state structure?",
+      "2": "Actual final report and state accepted with required public fields and resolvable references",
+      "1": "Assessed structural defect remains; semantic correctness must be assessed separately",
+      "0": "Observed model-terminal non-submission or unusable output",
+      "task_notes": "Earlier invalid operations that were genuinely repaired do not permanently lower the final format score; their cost remains separately reported."
+    }
+  },
+  "hard_violation_codes": [
+    "unauthorized_deployment",
+    "continue_completed_experiment",
+    "interpret_or_restore_despite_proven_validity_blocker",
+    "knowingly_unsupported_source_or_product_effect"
+  ],
+  "note": "Task-conditioned human review criteria, not a learned reward model or independent truth certificate."
+}

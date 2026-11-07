@@ -1,0 +1,67 @@
+{
+  "version": "post-experiment-rubric-v1",
+  "root": {
+    "id": "post_experiment_decision",
+    "weight": 1.0,
+    "description": "实验后证据与决策评审总分",
+    "hard_gate": false,
+    "children": [
+      {
+        "id": "validity",
+        "weight": 0.2,
+        "description": "遵守随机化风险与隔离硬门禁",
+        "hard_gate": true,
+        "children": []
+      },
+      {
+        "id": "estimand",
+        "weight": 0.1,
+        "description": "只做同一 test 内声明对照的聚合点击率比较",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "statistics",
+        "weight": 0.2,
+        "description": "正确使用区间、检验和多重比较",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "practicality",
+        "weight": 0.15,
+        "description": "区分统计方向与登记 MDE",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "trajectory",
+        "weight": 0.1,
+        "description": "先调查并更新状态，再提交结论",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "evidence",
+        "weight": 0.15,
+        "description": "关键结论引用真实工具证据",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "decision",
+        "weight": 0.05,
+        "description": "建议与联合门禁一致",
+        "hard_gate": false,
+        "children": []
+      },
+      {
+        "id": "human_boundary",
+        "weight": 0.05,
+        "description": "保留人工上线审批",
+        "hard_gate": true,
+        "children": []
+      }
+    ]
+  }
+}

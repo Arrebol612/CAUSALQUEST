@@ -1,0 +1,32 @@
+schema_version: metric-catalog-v1
+metrics:
+  - metric_id: click_through_rate
+    role: primary_or_diagnostic
+    unit: exposed_unit
+    direction: increase
+    numerator: clicked_exposed_units
+    denominator: exposed_units
+    default_window: same_session
+  - metric_id: conversion_rate
+    role: primary
+    unit: assigned_unit
+    direction: increase
+    numerator: converted_assigned_units
+    denominator: assigned_units
+    default_window: seven_days_after_assignment
+  - metric_id: crash_free_session_rate
+    role: guardrail
+    unit: session
+    direction: increase
+    numerator: crash_free_sessions
+    denominator: eligible_sessions
+    default_window: same_session
+  - metric_id: p95_latency_ms
+    role: guardrail
+    unit: request
+    direction: decrease
+    aggregation: percentile_95
+    default_window: request
+notes:
+  - These are authored benchmark definitions, not copied enterprise metrics.
+  - Every case pins an explicit metric version and attribution window.

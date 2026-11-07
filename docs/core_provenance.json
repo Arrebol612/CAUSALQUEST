@@ -1,0 +1,168 @@
+{
+  "source": "CausalQuest research implementation; no experiment datasets, weights or hidden evaluation cases copied",
+  "copied_modules": [
+    {
+      "path": "src/causalquest/data/controlled_lab.py",
+      "source": "src/causalquest/data/controlled_lab.py",
+      "sha256": "016fd6347c5aadaf7931cfb29e233810fa14e770c4bd477f8fe871cdfe78dff2"
+    },
+    {
+      "path": "src/causalquest/tasks/post_experiment_case_builder.py",
+      "source": "src/causalquest/tasks/post_experiment_case_builder.py",
+      "sha256": "3c3fd8559627e51661b4696d6078e761191c0574ed82e41b637c655d285f5bb9"
+    },
+    {
+      "path": "src/causalquest/tasks/post_experiment.py",
+      "source": "src/causalquest/tasks/post_experiment.py",
+      "sha256": "857c4752130c39487e6b897357410158bbfd309b34a0ea782fdbe25b4aa03cbb"
+    },
+    {
+      "path": "src/causalquest/schemas/__init__.py",
+      "source": "src/causalquest/schemas/__init__.py",
+      "sha256": "c7b52e4131ad71518762be415f8745046bf3be22fde0587d4ec63cdfce3f81eb"
+    },
+    {
+      "path": "src/causalquest/schemas/task_spec.py",
+      "source": "src/causalquest/schemas/task_spec.py",
+      "sha256": "e80768d7ad0fee68167141c01f9a9f5d2fe1b52d50b0825e511720dbe52688ec"
+    },
+    {
+      "path": "src/causalquest/schemas/rubric.py",
+      "source": "src/causalquest/schemas/rubric.py",
+      "sha256": "cbbbf7b34ce110722bdc3fc5ac6098c0bb8b46951482bfc8d60fb4453cd998ac"
+    },
+    {
+      "path": "src/causalquest/schemas/report.py",
+      "source": "src/causalquest/schemas/report.py",
+      "sha256": "a154b6f52e1de9940cb15fba7175a3ce29b476a5ac8aae0e290c1cf0b7988f16"
+    },
+    {
+      "path": "src/causalquest/schemas/evidence.py",
+      "source": "src/causalquest/schemas/evidence.py",
+      "sha256": "2bd4d6df80e3f954c71d95366358a87f86685c72b3d145efcdea71786c3a9826"
+    },
+    {
+      "path": "src/causalquest/data/post_experiment.py",
+      "source": "src/causalquest/data/post_experiment.py",
+      "sha256": "20fd2a228a935fbec86d4395e83f831dd57eec8019153b439100b46d6ffd9686"
+    },
+    {
+      "path": "src/causalquest/data/statistics.py",
+      "source": "src/causalquest/data/statistics.py",
+      "sha256": "61df5cfc60c88ea2cb8d54654170ce77c3b2bdc71b72d864d028db0223e58f65"
+    },
+    {
+      "path": "src/causalquest/evaluation/post_experiment.py",
+      "source": "src/causalquest/evaluation/post_experiment.py",
+      "sha256": "285b25a1fc1ba6e95a1b1b56c27de963f62eaa68e8e56a124a2dfc55cdd5d699"
+    },
+    {
+      "path": "src/causalquest/tasks/health_case_builder.py",
+      "source": "src/causalquest/tasks/health_case_builder.py",
+      "sha256": "acaecffa86a219397918690d849c6d6791c47d6eed46fae4c9db79570aabc122"
+    },
+    {
+      "path": "src/causalquest/tasks/health_diagnosis.py",
+      "source": "src/causalquest/tasks/health_diagnosis.py",
+      "sha256": "e2543b87234475d31bfdd612f8a333b892b54a6300324bbdf6c091c76ccc8919"
+    },
+    {
+      "path": "src/causalquest/data/faults.py",
+      "source": "src/causalquest/data/faults.py",
+      "sha256": "a6307642a5f3bbc53e167df22b6c772279a3308b68a185294ce16e8666b36422"
+    },
+    {
+      "path": "src/causalquest/evaluation/health_diagnosis.py",
+      "source": "src/causalquest/evaluation/health_diagnosis.py",
+      "sha256": "54a72ed4e3ad8fcc8a5f79a9b2befc414a6f0c2201fd62923d4560e80f7da1d9"
+    },
+    {
+      "path": "src/causalquest/data/health_checks.py",
+      "source": "src/causalquest/data/health_checks.py",
+      "sha256": "8c9ea7148e0fd1d346cde682b12163ea4aff80a8dcefe9379d62e728051503bf"
+    },
+    {
+      "path": "src/causalquest/data/experiment_db.py",
+      "source": "src/causalquest/data/experiment_db.py",
+      "sha256": "4adc692f77c1771c2d4b3c85b10ffa5e23ba9e941db1f531a88b7dc1b39dc22a"
+    },
+    {
+      "path": "src/causalquest/tasks/design_case_builder.py",
+      "source": "src/causalquest/tasks/design_case_builder.py",
+      "sha256": "6be192be932342ac112370d5d42099a8e1547cd7a72ac90f517f422cb02e5da9"
+    },
+    {
+      "path": "src/causalquest/tasks/design_review.py",
+      "source": "src/causalquest/tasks/design_review.py",
+      "sha256": "e9f7368a5d8fa065ca1a9b3d75adb910910bb8474b198dab461a5768455e135b"
+    },
+    {
+      "path": "src/causalquest/evaluation/design_review.py",
+      "source": "src/causalquest/evaluation/design_review.py",
+      "sha256": "021539e271e1ebb19754a6d23c9a248a26b022823f9ac2c0b6aafc0b7e49a090"
+    },
+    {
+      "path": "src/causalquest/models/contracts.py",
+      "source": "src/causalquest/models/contracts.py",
+      "sha256": "a08346476ed3b254fce2071e7f9166f11ae7cba133c63cc5269f8ff497c5a8f1"
+    },
+    {
+      "path": "src/causalquest/models/parsing.py",
+      "source": "src/causalquest/models/parsing.py",
+      "sha256": "847122f924eaefb56595017df3452b01d5f0b252fb2e952464883fb06584e947"
+    },
+    {
+      "path": "src/causalquest/harness/contracts.py",
+      "source": "src/causalquest/harness/contracts.py",
+      "sha256": "0d77454598c5bc5a21cc062c74fa5c6d1d113fc39cd82fe14223de2cf696f03f"
+    },
+    {
+      "path": "src/causalquest/harness/environment.py",
+      "source": "src/causalquest/harness/environment.py",
+      "sha256": "07ce9f02522ebac6fdd928f328a7456604b06b03e56baf2eb3670972eacec5f6"
+    },
+    {
+      "path": "src/causalquest/tools/post_experiment.py",
+      "source": "src/causalquest/tools/post_experiment.py",
+      "sha256": "739fc718b930346438aafb425befe13c93d1642be5d76fde25d35064f0470c76"
+    },
+    {
+      "path": "src/causalquest/tools/readonly_duckdb.py",
+      "source": "src/causalquest/tools/readonly_duckdb.py",
+      "sha256": "433b4326aeff3f804580a4cc5ce83846279ed5a476584f902cd781b1fc171be5"
+    },
+    {
+      "path": "src/causalquest/tools/case_environment.py",
+      "source": "src/causalquest/tools/case_environment.py",
+      "sha256": "de901cd2b85ea155977cd4229f69d17eff807dfb2f05837dcfb95b47b221d50f"
+    },
+    {
+      "path": "src/causalquest/data/analysis.py",
+      "source": "src/causalquest/data/analysis.py",
+      "sha256": "b8c98501bcc4400e4310852df00e1abe74315e300cbb14b9e7579f7fdc906e36"
+    },
+    {
+      "path": "src/causalquest/tools/health_diagnosis.py",
+      "source": "src/causalquest/tools/health_diagnosis.py",
+      "sha256": "6c6bdb566dd8f4f6cc1ce3e3d217045004f55601d50a149322851ae07944ccd5"
+    },
+    {
+      "path": "src/causalquest/tools/design_review.py",
+      "source": "src/causalquest/tools/design_review.py",
+      "sha256": "4a528d0346835359046562d4245a374a29ff9ed875fec98344a28b07243d5007"
+    },
+    {
+      "path": "src/causalquest/data/hashing.py",
+      "source": "src/causalquest/data/hashing.py",
+      "sha256": "6e5ab8dd8f137e5e1595ff79dcec197ac5c164c426b3f5d8011993586e1ac496"
+    },
+    {
+      "path": "src/causalquest/models/prompting.py",
+      "source": "src/causalquest/models/prompting.py",
+      "sha256": "dc142c64edb6766a4dd2a241f7d572f5b88464c5db450e25d35ae3d69aba6ff2"
+    }
+  ],
+  "modified_package_initializers": "minimal import-safe initializers",
+  "arithmetic_change": "one sibling import converted to package-relative; calculation bodies unchanged",
+  "rubric_source_sha256": "4511fd6bc95a74fad5d8b417026b1d5e04e6bb9c6213cf60a0943e1e0d9fa5e9"
+}

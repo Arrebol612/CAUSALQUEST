@@ -1,0 +1,8 @@
+include README.md LICENSE
+recursive-include docs *.md *.json
+recursive-include configs *.json
+recursive-include examples *.json *.yaml
+recursive-include tests *.py
+recursive-include scripts *.py *.sbatch
+recursive-include src *.json
+
