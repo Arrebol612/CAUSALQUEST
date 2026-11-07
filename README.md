@@ -56,20 +56,11 @@ Case Factory 构造受控案例及其工具环境。数据库、文档、工具�
 | **可核对的训练与采样记录** | 保存原生 token、实际采样参数、行为概率与旧策略分数，检查更新前的概率一致性 |
 | **明确的阶段与恢复机制** | 评分绑定原始轨迹，失败保留分母；检查点包含优化器、随机状态和训练进度，并验证独立重载 |
 
-```mermaid
-flowchart LR
-    F[Case Factory] --> E[公开任务环境]
-    D[审核后的专家示范] --> S[SFT 冷启动]
-    S --> P[当前策略]
-    P --> E
-    E --> T[完整轨迹组]
-    T --> J[公开证据评审]
-    R[任务 Rubric Tree] -. 评价结构 .-> J
-    J --> A[组内相对优势]
-    A --> U[策略更新与固定参考约束]
-    U --> P
-    T --> Q[固定分母的质量统计]
-```
+[![图1：CAUSALQUEST 证据驱动的 Agent 训练闭环](docs/figures/framework_architecture.png)](docs/figures/framework_architecture.svg)
+
+**图 1｜训练架构。** (a) 数据与任务；(b) Agent 与环境自主交互；(c) 公开证据评审和策略优化。
+实线表示数据或执行流，蓝色虚线表示新策略进入下一轮采样。
+[查看矢量图](docs/figures/framework_architecture.svg) · [图解与绘制来源](docs/FIGURES.md)
 
 Rubric Tree 描述任务评价结构；当前 RL 使用下文的七维评审接口产生排序。
 两者的具体实现与对应关系见 [Rubric Tree 说明](docs/RUBRIC_TREE.md)。
@@ -98,19 +89,12 @@ Rubric Tree 描述任务评价结构；当前 RL 使用下文的七维评审接�
 因果任务通常同时包含前提、证据和行动约束。Rubric Tree 将这些要求组织为有名称和版本的节点，
 每个节点包含 **ID、说明、局部权重、硬门禁标记**，同级节点的权重之和为 1。
 
-```mermaid
-flowchart TD
-    R[任务 Rubric Tree] --> V[有效性：硬门禁]
-    R --> T[任务专属标准]
-    R --> E[证据支持]
-    R --> D[决策一致性]
-    R --> H[人工审批边界：硬门禁]
-    T --> S[设计：问题覆盖与功效]
-    T --> L[健康：异常定位与调查过程]
-    T --> P[实验后：估计对象、统计与业务意义]
-```
+[![图2：三类任务的 Rubric Tree 与当前 RL 评审路径](docs/figures/rubric_tree_and_reward.png)](docs/figures/rubric_tree_and_reward.svg)
 
-上图按含义归类展示。实际三棵树目前均为“根节点 + 一层任务标准”；数据结构支持继续嵌套。
+**图 2｜评价结构与学习信号。** (a–c) 三类任务的实际标准、局部权重与硬门禁；(d) 当前 RL 的独立评分路径。
+[查看矢量图](docs/figures/rubric_tree_and_reward.svg) · [图解与重新生成](docs/FIGURES.md)
+
+三棵树目前均为“根节点 + 一层任务标准”，图中权重与版本直接读取实际 JSON；数据结构支持继续嵌套。
 可直接查看 [设计评审](examples/rubrics/design_review.json)、
 [健康诊断](examples/rubrics/health_diagnosis.json)、[实验后决策](examples/rubrics/post_experiment.json)
 的完整 JSON，或通过 Python 导出：
