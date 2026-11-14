@@ -1,6 +1,6 @@
 include README.md LICENSE
 recursive-include docs *.md *.json
-recursive-include docs/figures *.svg *.png
+recursive-include docs/figures *.svg *.png *.txt
 recursive-include configs *.json
 recursive-include examples *.json *.yaml
 recursive-include tests *.py

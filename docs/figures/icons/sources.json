@@ -1,0 +1,31 @@
+{
+  "project": "Microsoft Fluent Emoji",
+  "copyright": "Microsoft Corporation",
+  "license": "MIT",
+  "assets": [
+    {
+      "file": "teacher_flat_default.svg",
+      "upstream_path": "assets/Teacher/Default/Flat/teacher_flat_default.svg",
+      "url": "https://github.com/microsoft/fluentui-emoji/blob/main/assets/Teacher/Default/Flat/teacher_flat_default.svg",
+      "sha256": "d0cf19fac6954476cfc0e0e1dc0ce662977cc6e13e10adcea31491ce9cb322a6"
+    },
+    {
+      "file": "technologist_flat_default.svg",
+      "upstream_path": "assets/Technologist/Default/Flat/technologist_flat_default.svg",
+      "url": "https://github.com/microsoft/fluentui-emoji/blob/main/assets/Technologist/Default/Flat/technologist_flat_default.svg",
+      "sha256": "32deed84ac8f649dbe81e4973b469a81ce55d1b4d1e26a3995e09175df187c2d"
+    },
+    {
+      "file": "clipboard_flat.svg",
+      "upstream_path": "assets/Clipboard/Flat/clipboard_flat.svg",
+      "url": "https://github.com/microsoft/fluentui-emoji/blob/main/assets/Clipboard/Flat/clipboard_flat.svg",
+      "sha256": "547c9436baf05f0312c6afa0e9e07d174d22cce8498adf6cf68467487519c102"
+    },
+    {
+      "file": "balance_scale_flat.svg",
+      "upstream_path": "assets/Balance scale/Flat/balance_scale_flat.svg",
+      "url": "https://github.com/microsoft/fluentui-emoji/blob/main/assets/Balance scale/Flat/balance_scale_flat.svg",
+      "sha256": "086e82d739451ebd0cf8dc7b23376bd3e2e019373dda6da487f8971bc0437e00"
+    }
+  ]
+}

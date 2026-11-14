@@ -11,7 +11,10 @@ TOP={'README.md','LICENSE','pyproject.toml','.gitignore','MANIFEST.in'}
 FOLDERS={'src':{'.py','.json'},'tests':{'.py'},'configs':{'.json'},'examples':{'.json','.yaml'},
          'docs':{'.md','.json'},'scripts':{'.py','.sbatch'},'.github':{'.yml'}}
 FIGURES={'docs/figures/framework_architecture.svg','docs/figures/framework_architecture.png',
-         'docs/figures/rubric_tree_and_reward.svg','docs/figures/rubric_tree_and_reward.png'}
+         'docs/figures/rubric_tree_and_reward.svg','docs/figures/rubric_tree_and_reward.png',
+         'docs/figures/icons/teacher_flat_default.svg','docs/figures/icons/technologist_flat_default.svg',
+         'docs/figures/icons/clipboard_flat.svg','docs/figures/icons/balance_scale_flat.svg',
+         'docs/figures/icons/LICENSE.txt'}
 PATTERNS=[r'sk-(?:proj-)?[A-Za-z0-9_-]{24,}', r'AKIA[0-9A-Z]{16}',
           r'/home/[A-Za-z0-9_-]+/',r'[A-Z]:\\Users\\[A-Za-z0-9_-]+\\']
 

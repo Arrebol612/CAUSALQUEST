@@ -58,8 +58,8 @@ Case Factory 构造受控案例及其工具环境。数据库、文档、工具�
 
 [![图1：CAUSALQUEST 证据驱动的 Agent 训练闭环](docs/figures/framework_architecture.png)](docs/figures/framework_architecture.svg)
 
-**图 1｜训练架构。** (a) 数据与任务；(b) Agent 与环境自主交互；(c) 公开证据评审和策略优化。
-实线表示数据或执行流，蓝色虚线表示新策略进入下一轮采样。
+**图 1｜自主调查与策略优化。** 专家示范经 SFT 初始化 Agent；Agent 与环境交互形成完整轨迹组，
+经公开证据评审和组内比较后更新策略。绿色虚线表示新策略进入下一轮采样。
 [查看矢量图](docs/figures/framework_architecture.svg) · [图解与绘制来源](docs/FIGURES.md)
 
 Rubric Tree 描述任务评价结构；当前 RL 使用下文的七维评审接口产生排序。
@@ -91,7 +91,8 @@ Rubric Tree 描述任务评价结构；当前 RL 使用下文的七维评审接�
 
 [![图2：三类任务的 Rubric Tree 与当前 RL 评审路径](docs/figures/rubric_tree_and_reward.png)](docs/figures/rubric_tree_and_reward.svg)
 
-**图 2｜评价结构与学习信号。** (a–c) 三类任务的实际标准、局部权重与硬门禁；(d) 当前 RL 的独立评分路径。
+**图 2｜评价结构与学习信号。** 左侧三张任务卡片列出实际标准、局部权重及硬门禁；
+右侧展示当前 RL 的七维公开证据评分、组内比较与策略更新接口。
 [查看矢量图](docs/figures/rubric_tree_and_reward.svg) · [图解与重新生成](docs/FIGURES.md)
 
 三棵树目前均为“根节点 + 一层任务标准”，图中权重与版本直接读取实际 JSON；数据结构支持继续嵌套。
