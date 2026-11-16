@@ -1,13 +1,8 @@
-# Framework v0.1: design, execution plan and scope
+# Framework v0.1: architecture and scope
 
-## 2026-11-06：首版目标
-
-本轮将既有研究实现整理为独立的开源候选，目录为 `CausalQuest_framework/`。原实验数据、权重、
-评分和版本化脚本保留。框架的验收重点是可复现的训练与评测闭环，效果由具体配方及同协议对照衡量。
-
-首版顺序：提取领域核心 → 统一模型/轨迹接口 → SFT和完整分组采样 → 人工评审导入 → 单次RL更新
-→ 质量统计 → 测试与打包。当前首轮执行只使用本地CPU测试模型及合成工具环境；4B/A40验收属于后续
-真实资源阶段，需使用原模型快照和适配后的同协议数据，不能以toy分数代替。
+The framework connects source-aware task construction, shared model/environment interfaces,
+assistant-action SFT, grouped autonomous sampling, public-evidence review and policy updates.
+See [Data Factory](DATA_FACTORY.md) for data preparation and case construction.
 
 ## Components
 
@@ -45,16 +40,8 @@ accepts an explicit positive `sampling_temperature`. Top-p stays 1 and top-k 0 w
 penalties. It disables model-default fallback and records effective settings alongside native tokens.
 Raw frozen-HF scores remain distinct from the actual tempered sampling probabilities.
 
-Grad-enabled scoring uses decoder training mode with stochastic dropout disabled so that the actual
-Transformers checkpoint path executes. No-grad scoring and generation use eval mode. Each gradient
-forward checks for real checkpoint-function calls, and SFT step metrics record the cumulative count.
-The first A40 attempt exposed an eval-mode checkpoint bypass before any optimizer update; the corrected
-path passed local gradient-equivalence checks and the A40 run: one SFT update and fresh reload used
-16194.9 MiB peak allocated VRAM. Corrected sampling passed native-token/config checks. The latest
-temperature-0.6 six-draw cohort used 11445.3 MiB peak allocated VRAM and supplied one supported
-policy-advantage group. Returned native records report one successful real-model RL update,
-exact old/current cache agreement and fresh parameter reload at 24028.8 MiB peak allocated VRAM.
-All 223 files in the update archive and the 91 native generation receipts were verified locally.
+Grad-enabled scoring enables the decoder checkpoint path with stochastic dropout disabled.
+No-grad scoring and generation use eval mode. Gradient forwards check actual checkpoint execution.
 
 The old raw HF scores and actual generation-distribution scores are separate. The RL ratio is current
 policy / frozen old policy. Detached old / behavior correction has upper cap 2 and no lower floor.
@@ -129,16 +116,8 @@ configured catalogs and never opens the research workspace's locked-test directo
 Human reviewer packets contain public requests/observations, not hidden evaluator files. Peer reviewers
 must distinguish ambiguous contracts from wrong model decisions and use pending/adjudication when needed.
 
-## Acceptance and next research steps
+## Extension scope
 
-2026-11-07：公共包测试、独立 wheel 安装闭环和真实 4B/A40 验收已完成。真实验收包含一次 SFT 更新、
-最终六条轨迹的公开证据评审、一次 RL 更新及保存重载。223 个导出文件与 91 次原生生成记录均已核对。
-完整数值见 [Validation](VALIDATION.md)，三类任务评价结构见 [Rubric Tree](RUBRIC_TREE.md)。
-
-最终更新前核心支持 1/6，严格完整成功 0/6；尚未测量独立的更新后任务质量。
-后续能力研究应建立同一输入、工具和报告协议下的基线对照，按来源分组统计，并保留全部模型失败。
-不同协议的历史分数只作背景，不合并用于选模或宣称训练收益。
-
-公开仓库为 `Arrebol612/CAUSALQUEST`；原研究库以私有 `CausalQuest-research` 保留。
-发布仅包含白名单源码、示例、测试和文档。服务器运行配置、模型、原研究数据和私有评测留在各自原位置。
-首版支持 JSON 指标和人工语义评审；TensorBoard 导出、vLLM 训练适配和自动裁判按后续研究需要接入。
+The public framework exposes JSON artifacts and manual public-evidence reviews. Distributed training,
+a vLLM training adapter, a shared TensorBoard exporter and automated semantic judging are future extensions.
+See [Data Factory](DATA_FACTORY.md) for the archive adapter, controlled logs and task construction boundaries.

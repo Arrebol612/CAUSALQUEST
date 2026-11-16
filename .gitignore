@@ -16,3 +16,7 @@ build/
 *.safetensors
 *.duckdb
 
+
+# External archive acquisition and canonical databases
+dataset/raw/
+dataset/processed/
